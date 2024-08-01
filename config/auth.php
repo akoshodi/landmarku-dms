@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'users' => [
+            'driver' => 'session',
+            'provider' => 'ldap',
+        ],
     ],
 
     /*
@@ -60,9 +64,31 @@ return [
     */
 
     'providers' => [
+        // 'users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => env('AUTH_MODEL', App\Models\User::class),
+        // ],
         'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
+            'driver' => 'ldap',
+            // 'model' => App\Ldap\User::class,
+            'model' => LdapRecord\Models\DirectoryServer\Entry::class,
+            'rules' => [
+                // LdapRecord\Laravel\Auth\Rules\OnlyImported::class,
+            ],
+            'database' => [
+                'model' => App\Models\User::class,
+                'sync_passwords' => true,
+                'sync_attributes' => [
+                    'username' => 'uid',
+                    'email' => 'mail',
+                    'last_name' => 'sn',
+                    'first_name' => 'givenName',
+                    'password' => 'userPassword',
+                ],
+                'sync_existing' => [
+                    // 'username' => 'uid',
+                ],
+            ],
         ],
 
         // 'users' => [

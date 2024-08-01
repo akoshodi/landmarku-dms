@@ -16,8 +16,16 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'username' => 'oshodi.akinwale',
+            'last_name' => 'oshodi.akinwale',
+            'first_name' => 'oshodi.akinwale',
+            'email' => 'oshodi.akinwale@lmu.edu.ng',
+            'password' => env('DEFAULT_SEED_USER'),
+            'domain' => 'default',
+            'guid' => '31313131-3131-3131-3130-303131353737',
         ]);
+
+        $this->call(RolesTableSeeder::class);
+    }
     }
 }

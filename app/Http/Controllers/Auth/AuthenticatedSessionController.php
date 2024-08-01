@@ -8,9 +8,20 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use LdapRecord\Laravel\Auth\ListensForLdapBindFailure;
+
 
 class AuthenticatedSessionController extends Controller
 {
+    use ListensForLdapBindFailure;
+
+    protected $username = 'username';
+
+    public function __construct()
+    {
+        $this->listenForLdapBindFailure();
+    }
+
     /**
      * Display the login view.
      */
@@ -28,7 +39,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+//        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect(homeRoute());
     }
 
     /**
