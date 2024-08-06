@@ -30,10 +30,11 @@ class DashboardController extends Controller
         $users = DB::table('documents')
             ->leftJoin('users', 'documents.user_id', '=', 'users.id')
             ->leftJoin('document_type', 'documents.document_type_id', '=', 'document_type.id')
-            ->select('users.last_name', 'users.first_name', 'users.ENTRY_YEAR', 'users.id', 'document_type.name', 'documents.created_at', 'documents.id as document_id', 'documents.session', 'documents.semester', 'documents.uuid', 'documents.verified', 'documents.name as docname')
+            ->select('users.last_name', 'users.first_name', 'users.entry_year', 'users.avatar', 'users.id', 'document_type.name', 'documents.created_at', 'documents.id as document_id', 'documents.session', 'documents.semester', 'documents.uuid', 'documents.verified', 'documents.name as docname')
             ->orderBy('documents.created_at', 'desc')
 //            ->get();
             ->paginate(10);
+
 
         $uploads = DB::table('documents')
             ->selectRaw('count(*) as total')

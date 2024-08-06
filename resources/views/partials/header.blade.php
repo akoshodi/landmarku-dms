@@ -3,7 +3,7 @@
         <button class="header-toggler" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()"
         style="margin-inline-start: -14px;">
             <svg class="icon icon-lg">
-                <use xlink:href="assets/vendors/@coreui/icons/svg/free.svg#cil-menu">
+                <use xlink:href="/assets/vendors/@coreui/icons/svg/free.svg#cil-menu">
                 </use>
             </svg>
         </button>
@@ -28,7 +28,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="javascript:void(0)">
                     <svg class="icon icon-lg">
-                        <use xlink:href="assets/vendors/@coreui/icons/svg/free.svg#cil-bell">
+                        <use xlink:href="/assets/vendors/@coreui/icons/svg/free.svg#cil-bell">
                         </use>
                     </svg>
                 </a>
@@ -36,7 +36,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="javascript:void(0)">
                     <svg class="icon icon-lg">
-                        <use xlink:href="assets/vendors/@coreui/icons/svg/free.svg#cil-list-rich">
+                        <use xlink:href="/assets/vendors/@coreui/icons/svg/free.svg#cil-list-rich">
                         </use>
                     </svg>
                 </a>
@@ -44,7 +44,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="javascript:void(0)">
                     <svg class="icon icon-lg">
-                        <use xlink:href="assets/vendors/@coreui/icons/svg/free.svg#cil-envelope-open">
+                        <use xlink:href="/assets/vendors/@coreui/icons/svg/free.svg#cil-envelope-open">
                         </use>
                     </svg>
                 </a>
@@ -59,7 +59,7 @@
                 <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center"
                 type="button" aria-expanded="false" data-coreui-toggle="dropdown">
                     <svg class="icon icon-lg theme-icon-active">
-                        <use xlink:href="assets/vendors/@coreui/icons/svg/free.svg#cil-sun">
+                        <use xlink:href="/assets/vendors/@coreui/icons/svg/free.svg#cil-sun">
                         </use>
                     </svg>
                 </button>
@@ -68,7 +68,7 @@
                         <button class="dropdown-item d-flex align-items-center active" type="button"
                         data-coreui-theme-value="light">
                             <svg class="icon icon-lg me-3">
-                                <use xlink:href="assets/vendors/@coreui/icons/svg/free.svg#cil-sun">
+                                <use xlink:href="/assets/vendors/@coreui/icons/svg/free.svg#cil-sun">
                                 </use>
                             </svg>
                             Light
@@ -78,7 +78,7 @@
                         <button class="dropdown-item d-flex align-items-center" type="button"
                         data-coreui-theme-value="dark">
                             <svg class="icon icon-lg me-3">
-                                <use xlink:href="assets/vendors/@coreui/icons/svg/free.svg#cil-moon">
+                                <use xlink:href="/assets/vendors/@coreui/icons/svg/free.svg#cil-moon">
                                 </use>
                             </svg>
                             Dark
@@ -88,7 +88,7 @@
                         <button class="dropdown-item d-flex align-items-center" type="button"
                         data-coreui-theme-value="auto">
                             <svg class="icon icon-lg me-3">
-                                <use xlink:href="assets/vendors/@coreui/icons/svg/free.svg#cil-contrast">
+                                <use xlink:href="/assets/vendors/@coreui/icons/svg/free.svg#cil-contrast">
                                 </use>
                             </svg>
                             Auto
@@ -104,7 +104,11 @@
                 <a class="nav-link py-0 pe-0" data-coreui-toggle="dropdown" href="javascript:void(0)" role="button"
                 aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-md">
-                        <img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com">
+                        <img
+                            class="avatar-img"
+                            src="{{ asset('/assets/img/avatars/' . $logged_in_user->avatar)  }}"
+                            alt="{{ $logged_in_user->email ?? '' }}"
+                        >
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end pt-0">

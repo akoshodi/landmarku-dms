@@ -1,6 +1,10 @@
+/*@import 'datatables.net-dt/css/jquery.dataTables.css';*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 
 [type=text],input:where(:not([type])),[type=username],[type=url],[type=password],[type=number],[type=date],[type=datetime-local],[type=month],[type=search],[type=tel],[type=time],[type=week],[multiple],textarea,select {

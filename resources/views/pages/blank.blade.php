@@ -4,8 +4,14 @@
 
       <div class="body flex-grow-1">
         <div class="container-lg px-4">
-          <div class="row mb-4">
-
+            <div class="row mb-4">
+                <div class="card">
+                    <div class="card-header">Manage Users</div>
+                    <div class="card-body">
+                        {{ $dataTable->table() }}
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
 

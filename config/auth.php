@@ -80,7 +80,7 @@ return [
                 'sync_passwords' => true,
                 'sync_attributes' => [
                     'username' => 'uid',
-                    'email' => 'mail',
+//                    'email' => 'mail',
                     'last_name' => 'sn',
                     'first_name' => 'givenName',
                     'password' => 'userPassword',

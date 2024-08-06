@@ -72,7 +72,11 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['role:Administrator|Superadmin', 'auth']], function () {
+Route::group([
+    'prefix' => 'admin',
+    'as' => 'admin.',
+    'middleware' => ['role:Administrator|Superadmin', 'auth']
+], function () {
     Route::resource('manage', UserController::class);
 //    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('dashboard', [DashboardController::class, 'index'])

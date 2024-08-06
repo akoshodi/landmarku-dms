@@ -108,9 +108,11 @@
       <!-- /.col-->
     </div>
     <!-- /.row-->
+
+
     <div class="card mb-4">
       <div class="card-body">
-        <div class="d-flex justify-content-between"> 
+        <div class="d-flex justify-content-between">
           <div>
             <h4 class="card-title mb-0">Traffic</h4>
             <div class="small text-body-secondary">January - July 2023</div>

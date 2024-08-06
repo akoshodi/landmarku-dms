@@ -12,6 +12,7 @@ use Yajra\Datatables\Datatables;
 use LdapRecord\Models\OpenLDAP\User as Ldapuser;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
+use App\DataTables\UsersDataTable;
 
 class UserController extends Controller
 {
@@ -24,6 +25,8 @@ class UserController extends Controller
     {
         return view('backend.uploaders.manage');
     }
+
+
 
     /**
      * Show the form for creating a new resource.

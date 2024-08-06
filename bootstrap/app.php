@@ -13,13 +13,14 @@ return Application::configure(basePath: dirname(__DIR__))
         api: __DIR__.'/../routes/api.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
-//        apiPrefix: '/api',
+        apiPrefix: '/api',
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
             'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
             'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+            'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         ]);
 //        Route::middleware('web')
 //            ->group(function (Router $router) {

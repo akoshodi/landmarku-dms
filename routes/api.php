@@ -9,5 +9,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/users', [APIController::class, 'getAllUsersData'])
-    ->middleware('auth:sanctum')
+//    ->middleware('auth:sanctum')
     ->name('api.users');

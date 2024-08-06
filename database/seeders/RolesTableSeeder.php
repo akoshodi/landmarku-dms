@@ -24,7 +24,7 @@ class RolesTableSeeder extends Seeder
             $student = Role::create(['name' => 'Student']);
         }
 
-              
+
         // Assign all permissions to Superadmin
         $superadmin->givePermissionTo(Permission::all());
 

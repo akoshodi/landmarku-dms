@@ -10,6 +10,7 @@
         "alpinejs": "^3.4.2",
         "autoprefixer": "^10.4.2",
         "axios": "^1.6.4",
+        "laravel-datatables-vite": "^0.5.2",
         "laravel-vite-plugin": "^1.0",
         "postcss": "^8.4.31",
         "sass": "^1.77.6",
@@ -19,6 +20,7 @@
     "dependencies": {
         "@coreui/coreui": "^5.0.2",
         "@coreui/icons": "^3.0.1",
-        "@popperjs/core": "^2.11.8"
+        "@popperjs/core": "^2.11.8",
+        "datatables.net-dt": "^2.1.3"
     }
 }

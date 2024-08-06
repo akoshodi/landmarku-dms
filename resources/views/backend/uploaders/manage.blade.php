@@ -1,4 +1,4 @@
-@extends('backend.layouts.app2')
+@extends('backend.layouts.coreapp')
 
 @section('title', __('Dashboard'))
 @push('after-styles')
