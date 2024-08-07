@@ -21,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
             'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
             'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+            'impersonate' => \App\Http\Middleware\Impersonate::class,
         ]);
 //        Route::middleware('web')
 //            ->group(function (Router $router) {
